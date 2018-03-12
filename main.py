@@ -1,17 +1,11 @@
-
 import telebot
 import constants
 import random
-import threading
-
 
 bot = telebot.TeleBot(constants.token)
-
 words = constants.words
 n = len(words)
 iterator = random.randrange(0, n)
-PERIODIC_ID = constants.per_id
-TIMER = constants.timer
 
 
 def create_answer():
@@ -63,15 +57,8 @@ def handle_text(message):
     # log(message, answer)
 
 
-def send_message_perm(per_id):
-    answer = create_answer()
-    bot.send_message(per_id, answer)
-    threading.Timer(TIMER, send_message_perm(per_id)).start()
-
-
 def main():
     random.shuffle(words)
-    send_message_perm(PERIODIC_ID)
     bot.polling(none_stop=True, interval=0)
 
 

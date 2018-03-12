@@ -474,5 +474,3 @@ words = [('gente', 'люди'),
          ('cielo', 'небо')]
 
 token = '480033623:AAEiwV2fC9sok8RJAa_rSAFszemU19MA5dw'
-per_id = 145192866
-timer = 43200
