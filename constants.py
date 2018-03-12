@@ -1,6 +1,3 @@
-token = '480033623:AAEiwV2fC9sok8RJAa_rSAFszemU19MA5dw'
-
-
 words = [('gente', 'люди'),
          ('persona', 'человек'),
          ('hombre', 'мужчина'),
@@ -476,3 +473,6 @@ words = [('gente', 'люди'),
          ('nieve', 'снег'),
          ('cielo', 'небо')]
 
+token = '480033623:AAEiwV2fC9sok8RJAa_rSAFszemU19MA5dw'
+per_id = 145192866
+timer = 43200
