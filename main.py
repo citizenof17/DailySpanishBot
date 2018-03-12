@@ -3,12 +3,13 @@ import telebot
 import constants
 import random
 
+
 bot = telebot.TeleBot(constants.token)
 
 # bot.send_message(137945531, 'How are you?')
 #
-upd = bot.get_updates()
-message_from_user = upd[-1]
+# upd = bot.get_updates()
+# message_from_user = upd[-1]
 words = constants.words
 n = len(words)
 iterator = random.randrange(0, n)
@@ -34,16 +35,17 @@ def log(message, answer):
 def handle_text(message):
     answer = """Я всего лишь маленький бот и пока умею очень мало, но я стараюсь!
 Каждый день я буду (пока нет) давать тебе новое слово и его объяснение
-Введи /next, чтобы получить следующее слово, /start, чтобы начать сначала"""
+Чтобы получить следующее слово, введи /next
+Чтобы начать сначала, введи /start"""
     bot.send_message(message.from_user.id, answer)
-    log(message, answer)
+    # log(message, answer)
 
 
 @bot.message_handler(commands=['next'])
 def handle_text(message):
     answer = create_answer()
     bot.send_message(message.from_user.id, answer)
-    log(message, answer)
+    # log(message, answer)
 
 
 @bot.message_handler(commands=['start'])
@@ -52,15 +54,18 @@ def handle_text(message):
     iterator = 0
     answer = create_answer()
     bot.send_message(message.from_user.id, answer)
-    log(message, answer)
+    # log(message, answer)
 
 
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
     answer = 'Просто текст?'
     bot.send_message(message.from_user.id, answer)
-    log(message, answer)
+    # log(message, answer)
 
 
-# print(upd)
-bot.polling(none_stop=True, interval=0)
+def main():
+    bot.polling(none_stop=True, interval=0)
+
+if __name__ == "__main__":
+    main()
