@@ -2,9 +2,8 @@
 import telebot
 import constants
 import random
-import tkn
 
-bot = telebot.TeleBot(tkn.token)
+bot = telebot.TeleBot(constants.token)
 
 # bot.send_message(137945531, 'How are you?')
 #
