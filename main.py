@@ -6,7 +6,7 @@ bot = telebot.TeleBot(constants.token)
 words = constants.words
 n = len(words)
 iterator = random.randrange(0, n)
-
+SID = constants.per_id
 
 def create_answer():
     global iterator
@@ -38,6 +38,13 @@ def handle_text(message):
 def handle_text(message):
     answer = create_answer()
     bot.send_message(message.from_user.id, answer)
+    # log(message, answer)
+
+
+@bot.message_handler(commands=['go'])
+def handle_text(message):
+    answer = create_answer()
+    bot.send_message(SID, answer)
     # log(message, answer)
 
 

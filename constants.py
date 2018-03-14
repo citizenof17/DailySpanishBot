@@ -473,4 +473,5 @@ words = [('gente', 'люди'),
          ('nieve', 'снег'),
          ('cielo', 'небо')]
 
+per_id = 145192866
 token = '480033623:AAEiwV2fC9sok8RJAa_rSAFszemU19MA5dw'
